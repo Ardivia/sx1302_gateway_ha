@@ -1,0 +1,4 @@
+# https://developers.home-assistant.io/docs/add-ons/repository#repository-configuration
+name: SX1302 Lora Gateway - Home Assistant integration add-on repository
+url: 'https://github.com/Ardivia/sx1302_gateway_ha'
+maintainer: Ardivia <info@ardivia.it>
