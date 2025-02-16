@@ -1,0 +1,36 @@
+name: "SX1302 LoRa Gateway"
+version: "1.0.0"
+slug: sx1302_gateway_ha
+description: "Home Assistant add-on for SX1302 LoRa Gateway."
+arch: ["aarch64", "armv7", "armhf"]
+startup: application
+boot: auto
+
+options:
+  server_address: "127.0.0.1"
+  port: 1700
+  region: "EU868"  # Default region
+  reset_pin: 17  # Default reset pin
+  power_en_pin: 18  # Default power enable pin
+
+schema:
+  server_address: "str"
+  port: "int"
+  region: "list(EU868|US915|AS923|AU915|CN470)"  # Lista delle regioni supportate
+  reset_pin: "int"
+  power_en_pin: "int"
+
+image: "ghcr.io/ardivia/sx1302_gateway"
+
+init: false
+
+full_access: true
+
+gpio: true
+uart: true
+
+devices:
+  - "/dev/spidev0.0"
+  - "/dev/spidev0.1"
+  - "/dev/gpiomem"
+  - "/dev/ttyS0"
