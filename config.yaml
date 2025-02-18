@@ -20,7 +20,7 @@ schema:
   reset_pin: "int"
   power_en_pin: "int"
 
-image: "ghcr.io/ardivia/sx1302_gateway"
+image: "ghcr.io/ardivia/sx1302_gateway_ha"
 
 init: false
 
