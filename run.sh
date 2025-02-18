@@ -32,6 +32,7 @@ if [ -f "$CONFIG_FILE" ]; then
     sed -i "s/\"server_address\": \".*\"/\"server_address\": \"$IP\"/" "$CONFIG_FILE"
     sed -i "s/\"serv_port_up\": [0-9]*/\"serv_port_up\": $PORT/" "$CONFIG_FILE"
     sed -i "s/\"serv_port_down\": [0-9]*/\"serv_port_down\": $PORT/" "$CONFIG_FILE"
+    sed -i "s/\"gps_tty_path\": \".*\"/\"gps_tty_path\": \"\/dev\/ttyAMA0\"/" "$CONFIG_FILE"
     
 else
     echo "Configuration file $CONFIG_FILE not found!"
