@@ -1,5 +1,5 @@
 name: "SX1302 LoRa Gateway"
-version: "1.0.0"
+version: "1.0.1"
 slug: sx1302_gateway_ha
 description: "Home Assistant add-on for SX1302 LoRa Gateway."
 arch: ["aarch64", "armv7", "armhf"]
@@ -7,6 +7,7 @@ startup: application
 boot: auto
 
 options:
+  gateway_id: "AA555A0000000000"
   server_address: "127.0.0.1"
   port: 1700
   region: "EU868"  # Default region
@@ -14,6 +15,7 @@ options:
   power_en_pin: 18  # Default power enable pin
 
 schema:
+  gateway_id: "str"
   server_address: "str"
   port: "int"
   region: "list(EU868|US915|AS923|AU915|CN470)"  # Lista delle regioni supportate
