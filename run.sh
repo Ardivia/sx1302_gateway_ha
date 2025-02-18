@@ -1,6 +1,6 @@
 #!/bin/bash
 
-VERSION="1.0.1"
+VERSION="1.0.2"
 
 echo "Running SX1302 LoRa Gateway version: $VERSION"
 
