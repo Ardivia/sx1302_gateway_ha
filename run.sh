@@ -1,6 +1,6 @@
 #!/bin/bash
 
-VERSION="1.0.2"
+VERSION="1.0.3"
 
 echo "Running SX1302 LoRa Gateway version: $VERSION"
 
@@ -28,16 +28,21 @@ if [ -f "$CONFIG_FILE" ]; then
     echo "Updating the configuration file with IP: $IP and PORT: $PORT..."
 
     # Update the configuration file with the provided IP and port using sed
-	sed -i "s/\"gateway_ID\": \".*\"/\"gateway_ID\": \"$GATEWAY_ID\"/" "$CONFIG_FILE"
+    sed -i "s/\"gateway_ID\": \".*\"/\"gateway_ID\": \"$GATEWAY_ID\"/" "$CONFIG_FILE"
     sed -i "s/\"server_address\": \".*\"/\"server_address\": \"$IP\"/" "$CONFIG_FILE"
     sed -i "s/\"serv_port_up\": [0-9]*/\"serv_port_up\": $PORT/" "$CONFIG_FILE"
     sed -i "s/\"serv_port_down\": [0-9]*/\"serv_port_down\": $PORT/" "$CONFIG_FILE"
     sed -i "s/\"gps_tty_path\": \".*\"/\"gps_tty_path\": \"\/dev\/ttyAMA0\"/" "$CONFIG_FILE"
-    
 else
     echo "Configuration file $CONFIG_FILE not found!"
     exit 1
 fi
+
+# Start a simple healthcheck server with netcat
+echo "Starting healthcheck server on port 8080..."
+while true; do
+    echo -e "HTTP/1.1 200 OK\r\nContent-Type: text/plain\r\nContent-Length: 2\r\n\r\nOK" | nc -l -p 8080 -q 1
+done &
 
 # Start the LoRa packet forwarder
 echo "Starting the LoRa packet forwarder..."
