@@ -41,7 +41,7 @@ fi
 # Start a simple healthcheck server with netcat
 echo "Starting healthcheck server on port 8080..."
 while true; do
-    echo -e "HTTP/1.1 200 OK\r\nContent-Type: text/plain\r\nContent-Length: 2\r\n\r\nOK" | nc -l -p 8080 -q 1
+    echo "HTTP/1.1 200 OK\r\nContent-Type: text/plain\r\nContent-Length: 2\r\n\r\nOK" | nc -l -p 8080 -q 1
 done &
 
 # Start the LoRa packet forwarder
