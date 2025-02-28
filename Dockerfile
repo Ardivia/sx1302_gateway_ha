@@ -12,6 +12,7 @@ RUN apt-get update && apt-get install -y \
     gpiod \
     jq \
     curl \
+    netcat-traditional \
     && rm -rf /var/lib/apt/lists/*
 
 # Set the working directory
@@ -31,6 +32,9 @@ COPY run.sh /sx1302_hal/packet_forwarder/run.sh
 COPY reset_lgw.sh /sx1302_hal/packet_forwarder/reset_lgw.sh
 RUN chmod +x /sx1302_hal/packet_forwarder/run.sh
 RUN chmod +x /sx1302_hal/packet_forwarder/reset_lgw.sh
+
+#Expose port for health check
+EXPOSE 8080
 
 # Define the command to run on startup
 CMD ["sh", "-c", "/sx1302_hal/packet_forwarder/run.sh"]
