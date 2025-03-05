@@ -22,8 +22,6 @@ schema:
   reset_pin: "int"
   power_en_pin: "int"
 
-image: "ghcr.io/ardivia/sx1302_gateway_ha"
-
 ports:
   8080/tcp: null  #Healthcheck port
 
