@@ -37,4 +37,4 @@ RUN chmod +x /sx1302_hal/packet_forwarder/reset_lgw.sh
 EXPOSE 8080
 
 # Define the command to run on startup
-ENTRYPOINT ["sh", "-c", "/sx1302_hal/packet_forwarder/run.sh"]
+ENTRYPOINT ["sh", "-c", "/run.sh"]
