@@ -27,7 +27,7 @@ ports:
 
 watchdog: "http://[HOST]:[PORT:8080]/health"
 
-image: "ghcr.io/ardivia/sx1302_gateway_ha"
+image: "ghcr.io/ardivia/sx1302_gateway_ha:1.1.0"
 
 init: false
 
