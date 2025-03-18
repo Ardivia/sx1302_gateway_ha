@@ -1,6 +1,4 @@
 #!/bin/bash
-echo "Running SX1302 LoRa Gateway version: 1.2.0"
-
 # Read configuration values from the options file
 CONFIG_PATH=/data/options.json
 echo "Reading configuration from $CONFIG_PATH"
