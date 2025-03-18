@@ -31,8 +31,6 @@ watchdog: "http://[HOST]:[PORT:8080]/health"
 
 init: false
 
-full_access: true
-
 gpio: true
 uart: true
 
