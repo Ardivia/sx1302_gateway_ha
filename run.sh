@@ -1,7 +1,5 @@
 #!/bin/bash
-ADDON_CONFIG=/etc/hassio/addons/local/sx1302_gateway_ha/config.yaml
-VERSION=$(grep "version:" "$ADDON_CONFIG" | awk '{print $2}' | tr -d '"')
-echo "Running SX1302 LoRa Gateway version: $VERSION"
+echo "Running SX1302 LoRa Gateway version: 1.2.0"
 
 # Read configuration values from the options file
 CONFIG_PATH=/data/options.json
