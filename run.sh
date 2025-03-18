@@ -1,7 +1,6 @@
 #!/bin/bash
 
-VERSION="1.1.8"
-
+VERSION=$(jq --raw-output '.version' "/data/addon.metadata")
 echo "Running SX1302 LoRa Gateway version: $VERSION"
 
 # Read configuration values from the options file
@@ -11,7 +10,7 @@ REGION=$(jq --raw-output '.region' $CONFIG_PATH)
 GATEWAY_ID=$(jq --raw-output '.gateway_id' $CONFIG_PATH)
 IP=$(jq --raw-output '.server_address' $CONFIG_PATH)
 PORT=$(jq --raw-output '.port' $CONFIG_PATH)
-PORT=$(jq --raw-output '.gps' $CONFIG_PATH)
+GPS=$(jq --raw-output '.gps' $CONFIG_PATH)
 
 echo "Configuration values:"
 echo "REGION: $REGION"
