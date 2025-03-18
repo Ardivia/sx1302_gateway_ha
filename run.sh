@@ -1,6 +1,6 @@
 #!/bin/bash
-
-VERSION=$(jq --raw-output '.version' /data/addon.metadata)
+ADDON_CONFIG=/etc/hassio/addons/local/sx1302_gateway_ha/config.yaml
+VERSION=$(grep "version:" "$ADDON_CONFIG" | awk '{print $2}' | tr -d '"')
 echo "Running SX1302 LoRa Gateway version: $VERSION"
 
 # Read configuration values from the options file
@@ -33,7 +33,7 @@ if [ -f "$CONFIG_FILE" ]; then
     sed -i "s/\"server_address\": \".*\"/\"server_address\": \"$IP\"/" "$CONFIG_FILE"
     sed -i "s/\"serv_port_up\": [0-9]*/\"serv_port_up\": $PORT/" "$CONFIG_FILE"
     sed -i "s/\"serv_port_down\": [0-9]*/\"serv_port_down\": $PORT/" "$CONFIG_FILE"
-    sed -i "s/\"gps_tty_path\": \".*\"/\"gps_tty_path\": \"$GPS\"/" "$CONFIG_FILE"
+    sed -i "s/\"gps_tty_path\": \".*\"/\"gps_tty_path\": \"\/dev\/$GPS\"/" "$CONFIG_FILE"
 else
     echo "Configuration file $CONFIG_FILE not found!"
     exit 1
