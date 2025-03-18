@@ -38,4 +38,3 @@ EXPOSE 8080
 
 # Define the command to run on startup
 CMD ["sh", "-c", "/sx1302_hal/packet_forwarder/run.sh"]
-
