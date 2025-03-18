@@ -13,6 +13,7 @@ options:
   region: "EU868"  # Default region
   reset_pin: 17  # Default reset pin
   power_en_pin: 18  # Default power enable pin
+  gps: 
 
 schema:
   gateway_id: "str"
@@ -39,3 +40,5 @@ devices:
   - "/dev/spidev0.1"
   - "/dev/gpiomem"
   - "/dev/ttyAMA0"
+  - "/dev/ttyAMA10"
+  - "/dev/ttyS0"
