@@ -1,5 +1,5 @@
 name: "SX1302 LoRa Gateway"
-version: "1.1.9"
+version: "1.1.10"
 slug: sx1302_gateway_ha
 description: "Home Assistant add-on for SX1302 LoRa Gateway."
 arch: ["aarch64", "armv7", "armhf"]
