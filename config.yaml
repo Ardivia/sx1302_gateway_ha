@@ -1,5 +1,5 @@
 name: "SX1302 LoRa Gateway"
-version: "1.2.1"
+version: "1.2.2"
 slug: sx1302_gateway_ha
 description: "Home Assistant add-on for SX1302 LoRa Gateway."
 arch: ["aarch64", "armv7", "armhf"]
@@ -38,6 +38,7 @@ devices:
   - "/dev/spidev0.0"
   - "/dev/spidev0.1"
   - "/dev/gpiomem"
+  - "/dev/i2c-1"
   - "/dev/ttyAMA0"
   - "/dev/ttyAMA10"
   - "/dev/ttyS0"
