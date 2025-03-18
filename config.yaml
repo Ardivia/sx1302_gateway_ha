@@ -1,5 +1,5 @@
 name: "SX1302 LoRa Gateway"
-version: "1.1.4"
+version: "1.2.0"
 slug: sx1302_gateway_ha
 description: "Home Assistant add-on for SX1302 LoRa Gateway."
 arch: ["aarch64", "armv7", "armhf"]
@@ -13,6 +13,7 @@ options:
   region: "EU868"  # Default region
   reset_pin: 17  # Default reset pin
   power_en_pin: 18  # Default power enable pin
+  gps: "ttyAMA10"
 
 schema:
   gateway_id: "str"
@@ -21,6 +22,7 @@ schema:
   region: "list(EU868|US915|AS923|AU915|CN470)"  # Lista delle regioni supportate
   reset_pin: "int"
   power_en_pin: "int"
+  gps: "str"
 
 ports:
   8080/tcp: null  #Healthcheck port
@@ -39,3 +41,5 @@ devices:
   - "/dev/spidev0.1"
   - "/dev/gpiomem"
   - "/dev/ttyAMA0"
+  - "/dev/ttyAMA10"
+  - "/dev/ttyS0"
