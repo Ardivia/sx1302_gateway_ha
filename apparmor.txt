@@ -1,6 +1,6 @@
 #include <tunables/global>
 
-profile sx1302_gateway_ha flags=(attach_disconnected,mediate_deleted) {
+profile sx1302-gateway-ha flags=(attach_disconnected,mediate_deleted) {
   #include <abstractions/base>
 
   # Capabilities
